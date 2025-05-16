@@ -2,37 +2,27 @@
 import { BackgroundBeams } from "@/components/ui/background-beams";
 import Image from "next/image";
 import { motion } from "framer-motion";
-
+import { Marquee } from "@/components/magicui/marquee";
+import { SiReact, SiNextdotjs, SiJavascript, SiTypescript, SiNodedotjs, SiTailwindcss, SiMongodb, SiPostgresql } from "react-icons/si";
+import {imag1} from '@/public/imag1.png'
 export default function About() {
   const skills = [
-    { name: "React", level: 90 },
-    { name: "Next.js", level: 85 },
-    { name: "JavaScript", level: 90 },
-    { name: "TypeScript", level: 80 },
-    { name: "Node.js", level: 85 },
-    { name: "Tailwind CSS", level: 90 },
-    { name: "MongoDB", level: 75 },
-    { name: "SQL", level: 80 },
+    { name: "React", icon: <SiReact className="w-12 h-12 text-cyan-400" /> },
+    { name: "Next.js", icon: <SiNextdotjs className="w-12 h-12 text-white" /> },
+    { name: "JavaScript", icon: <SiJavascript className="w-12 h-12 text-yellow-300" /> },
+    { name: "TypeScript", icon: <SiTypescript className="w-12 h-12 text-blue-400" /> },
+    { name: "Node.js", icon: <SiNodedotjs className="w-12 h-12 text-green-400" /> },
+    { name: "Tailwind CSS", icon: <SiTailwindcss className="w-12 h-12 text-sky-400" /> },
+    { name: "MongoDB", icon: <SiMongodb className="w-12 h-12 text-green-500" /> },
+    { name: "PostgreSQL", icon: <SiPostgresql className="w-12 h-12 text-blue-500" /> },
   ];
 
   const experiences = [
     {
-      title: "Senior Frontend Developer",
-      company: "Tech Innovations Inc.",
-      period: "2022 - Present",
-      description: "Leading the frontend development team in building scalable web applications using React and Next.js.",
-    },
-    {
-      title: "Full Stack Developer",
-      company: "Digital Solutions Ltd.",
-      period: "2020 - 2022",
-      description: "Developed and maintained full-stack web applications using MERN stack and integrated third-party APIs.",
-    },
-    {
       title: "Web Developer",
-      company: "WebCraft Studio",
-      period: "2018 - 2020",
-      description: "Created responsive websites and implemented SEO strategies to improve client visibility.",
+      company: "Ureckon",
+      period: "202 - 2018",
+      description: "Built a responsive website for our college's tech fest, improving user engagement and online participation.",
     },
   ];
 
@@ -62,7 +52,7 @@ export default function About() {
           >
             <div className="relative w-64 h-64 md:w-80 md:h-80 overflow-hidden rounded-2xl border-2 border-yellow-400/20">
               <Image 
-                src="/profile-placeholder.jpg" 
+                src="/imag1.png"
                 alt="Debanjan Mukherjee" 
                 fill
                 className="object-cover"
@@ -92,13 +82,13 @@ export default function About() {
             
             <div className="flex flex-wrap gap-3">
               <div className="bg-neutral-900 px-4 py-2 rounded-full text-sm">
-                <span className="text-yellow-300">Location:</span> New York, USA
+                <span className="text-yellow-300">Location:</span> Kolkata , West Bengal
               </div>
               <div className="bg-neutral-900 px-4 py-2 rounded-full text-sm">
                 <span className="text-yellow-300">Available for:</span> Freelance
               </div>
               <div className="bg-neutral-900 px-4 py-2 rounded-full text-sm">
-                <span className="text-yellow-300">Experience:</span> 5+ Years
+                <span className="text-yellow-300">Experience:</span> 1+ Years
               </div>
             </div>
           </motion.div>
@@ -110,25 +100,21 @@ export default function About() {
           transition={{ duration: 0.5, delay: 0.6 }}
           className="mb-16"
         >
-          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600">
+          <h2 className="text-2xl md:text-3xl font-bold mb-8 text-center bg-clip-text text-transparent bg-gradient-to-b from-yellow-200 to-yellow-500">
             Technical Skills
           </h2>
-          
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-            {skills.map((skill, index) => (
-              <div key={index} className="mb-4">
-                <div className="flex justify-between mb-2">
-                  <span className="text-neutral-300">{skill.name}</span>
-                  <span className="text-yellow-300">{skill.level}%</span>
-                </div>
-                <div className="w-full bg-neutral-800 rounded-full h-2.5">
-                  <div 
-                    className="bg-yellow-400 h-2.5 rounded-full"
-                    style={{ width: `${skill.level}%` }}
-                  ></div>
-                </div>
+          <div className="relative w-full">
+            <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-yellow-400/10 via-white/5 to-yellow-400/10 backdrop-blur-md shadow-lg z-0 pointer-events-none" />
+            <Marquee className="w-full z-10 relative">
+              <div className="flex flex-row gap-6">
+                {skills.map((skill, index) => (
+                  <div key={index} className="flex flex-col items-center p-4 bg-neutral-900/80 border border-yellow-400/40 rounded-xl hover:bg-yellow-400/10 hover:border-yellow-400 transition-all min-w-[120px] shadow-md backdrop-blur-sm">
+                    <div className="mb-4 flex items-center justify-center">{skill.icon}</div>
+                    <span className="text-yellow-100 font-semibold text-center drop-shadow-sm">{skill.name}</span>
+                  </div>
+                ))}
               </div>
-            ))}
+            </Marquee>
           </div>
         </motion.div>
 

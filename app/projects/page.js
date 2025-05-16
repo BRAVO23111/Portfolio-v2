@@ -2,7 +2,7 @@
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click.jsx";
-import { BackgroundBeams } from "@/components/ui/background-beams";
+
 import Image from "next/image";
 
 export default function ProjectsPage() {
@@ -30,7 +30,7 @@ export default function ProjectsPage() {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-black text-white px-4">
       <div className="max-w-2xl mx-auto p-4 relative z-10">
-        <h1 className="text-4xl md:text-5xl font-bold text-center mb-4 mt-12 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600">
+        <h1 className="text-4xl md:text-5xl font-bold text-center mb-4 mt-20 bg-clip-text text-transparent bg-gradient-to-b from-neutral-200 to-neutral-600">
           My Projects
         </h1>
         <p className="text-neutral-400 mx-auto my-2 text-lg text-center" style={{ fontFamily: 'Nunito Sans, sans-serif' }}>
@@ -54,7 +54,7 @@ export default function ProjectsPage() {
                     height={100}
                     src={card.src}
                     alt={card.title}
-                    className="h-40 w-40 md:h-14 md:w-14 rounded-lg object-cover object-top"
+                    className="h-40 w-40 md:h-24 md:w-24 rounded-lg object-cover object-top"
                   />
                 </motion.div>
                 <div>
@@ -197,10 +197,10 @@ export const CloseIcon = () => {
 
 const cards = [
   {
-    description: "E-commerce Platform",
-    title: "ShopSmart",
-    src: "/images/project1.jpg",
-    ctaText: "View Demo",
+    description: "RBAC Hospital Management Application",
+    title: "MedHelp",
+    src: "/Project1.png",
+    ctaText: "Try It!",
     ctaLink: "https://example.com/shopsmart",
     content: () => (
       <p>
@@ -214,10 +214,10 @@ const cards = [
     ),
   },
   {
-    description: "Task Management App",
-    title: "TaskFlow",
-    src: "/images/project2.jpg",
-    ctaText: "Try it out",
+    description: "AI-Content Writer",
+    title: "Writee",
+    src: "/Project2.png",
+    ctaText: "Try It!",
     ctaLink: "https://example.com/taskflow",
     content: () => (
       <p>
@@ -231,16 +231,16 @@ const cards = [
     ),
   },
   {
-    description: "AI Chat Assistant",
-    title: "ConvoBot",
-    src: "/images/project3.jpg",
-    ctaText: "Explore",
+    description: "Online Book selling Platform ",
+    title: "Re-Story",
+    src: "/Project3.png",
+    ctaText: "Try It!",
     ctaLink: "https://example.com/convobot",
     content: () => (
       <p>
         An AI-powered chat assistant that provides intelligent responses to user
         queries. Implemented using Node.js backend with a React frontend and integrated
-        with OpenAI's API. <br /><br />The application features conversation memory,
+        with OpenAI&apos;s API. <br /><br />The application features conversation memory,
         context awareness, and the ability to handle complex queries with natural
         language understanding. It can be easily integrated into websites and 
         applications to provide instant customer support and information.
@@ -248,10 +248,10 @@ const cards = [
     ),
   },
   {
-    description: "Finance Dashboard",
-    title: "WealthTracker",
-    src: "/images/project4.jpg",
-    ctaText: "Learn More",
+    description: "AI Platform to Track Your Studies ",
+    title: "StudyInsights-AI",
+    src: "/Project4.png",
+    ctaText: "Try It!",
     ctaLink: "https://example.com/wealthtracker",
     content: () => (
       <p>
